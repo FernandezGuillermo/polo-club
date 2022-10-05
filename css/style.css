@@ -1,0 +1,40 @@
+*{ /* RESET CSS */
+    margin: 0;
+    padding: 0;
+}
+
+.bg-color{
+    background-color: rgba(16, 38, 73, 1);
+}
+
+a.nav-link{
+    color:white;
+}
+
+a.nav-link:hover{
+    color:rgb(250, 33, 33);
+}
+
+a.navbar-brand{
+    color: white;
+}
+
+a.navbar-brand:hover{
+    color: rgb(250, 33, 33);
+}
+
+.img-marca{
+    height: 300px;
+}
+
+.img-portada-1{
+    max-height: 700px;
+}
+
+.img-portada-2{
+    max-height: 700px;
+}
+
+.img-portada-3{
+    max-height: 700px;
+}

@@ -1,16 +1,32 @@
+//Create a nav bar whith bootstrap
+const navBar = document.getElementById("navBar");
+navBar.innerHTML = `
+                    <nav class="navbar navbar-expand-lg bg-color"> <!--NAV BAR-->
+                    <div class="container-fluid mt-2">
+                    <a class="navbar-brand" href="#">Oxford Polo Club - Esperanza</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/products.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/signIn.html">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contact.html">Contacto</a>
+                        </li>       
+                        </ul>
+                    </div>
+                    </div>
+                    </nav>     
+                    `
 
-class Producto{
-    constructor(nombre,talle,cantidad,precio){
-        this.nombre = nombre;
-        this.talle = talle;
-        this.cantidad = cantidad;
-        this.precio = precio;
-    }
-    stock(){
-        return this.cantidad;
-    }
-}
+document.header.appendChild(navBar);
 
-let jeans = new Producto("Kansas",46,8,12500);
 
-console.log(jeans.stock());
