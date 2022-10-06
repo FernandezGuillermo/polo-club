@@ -28,5 +28,3 @@ navBar.innerHTML = `
                     `
 
 document.header.appendChild(navBar);
-
-
