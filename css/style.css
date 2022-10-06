@@ -13,6 +13,7 @@ main{
 
 a.nav-link{
     color:white;
+    font-family: 'Manrope', sans-serif;
 }
 
 a.nav-link:hover{
@@ -27,11 +28,8 @@ a.navbar-brand:hover{
     color: #9d0703;
 }
 
-/* .img-marca{
-    height: auto;
-    width: 100%;
-} */
 .text-marca{
+    font-family: 'Manrope', sans-serif;
     color: white;
     font-size: 3rem;
 }

@@ -3,7 +3,9 @@ const navBar = document.getElementById("navBar");
 navBar.innerHTML = `
                     <nav class="navbar navbar-expand-lg bg-color"> <!--NAV BAR-->
                     <div class="container-fluid mt-2">
-                    <a class="navbar-brand" href="#">Oxford Polo Club - Esperanza</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="resources/img-polo-nav.png" alt="Logo Polo" width="30" height="30">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
