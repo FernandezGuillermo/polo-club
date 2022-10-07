@@ -63,10 +63,26 @@ a.navbar-brand:hover{
     color: white;
 }
 
+.footer__direccion{
+    color: white;
+}
+
+.footer__tel{
+    color: white;
+}
+
 .footer__instagram{
     height: 50px;
 }
 
 .footer__facebook{
+    height: 50px;
+}
+
+.footer__ubicacion{
+    height: 50px;
+}
+
+.footer__cel{
     height: 50px;
 }
