@@ -61,6 +61,8 @@ a.navbar-brand:hover{
 
 .footer__text{
     color: white;
+    font-size: 80px;
+    font-family: 'Manrope', sans-serif;
 }
 
 .footer__direccion{
@@ -80,9 +82,9 @@ a.navbar-brand:hover{
 }
 
 .footer__ubicacion{
-    height: 50px;
+    height: 40px;
 }
 
 .footer__cel{
-    height: 50px;
+    height: 40px;
 }
