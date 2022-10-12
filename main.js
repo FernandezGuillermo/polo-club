@@ -36,13 +36,13 @@ const fecha = new Date();
 //variable que obtiene la hora actual
 let hora = fecha.getHours();
 
-const saludo = document.getElementById('text-portada');
+const saludo = document.getElementById("text-portada");
 
 //Funcion para saludar dependiendo la hora del dia
 function saludar(){
     if(hora > 7 && hora <12) saludo.innerText = "Buenos dias";
-    if(hora >12 && hora <18) saludo.innerText = "Buenas tardes";
-    if (hora>18) saludo.innerText = "Buenas noches";
+    if(hora > 12 && hora <18) saludo.innerText = "Buenas tardes";
+    if(hora > 18) saludo.innerText = "Buenas noches";
 }
 
 saludar();
