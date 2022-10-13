@@ -27,5 +27,5 @@ navBar.innerHTML = `
                     </nav>     
                     `
 
-document.header.appendChild(navBar);
+
 

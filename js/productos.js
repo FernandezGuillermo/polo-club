@@ -28,8 +28,7 @@ function mostrarProductos(items){
             <button id="agregar${element.id}" class="btn btn-primary">Agregar al carrito</button>
             </div>
         `
-        contenedorProductos.appendChild(card);
-        
+
         let botonAgregar=document.getElementById(`agregar${element.id}`);
         
         botonAgregar.addEventListener("click", ()=>{

@@ -29,8 +29,6 @@ navBar.innerHTML = `
                     </nav>     
                     `
 
-document.header.appendChild(navBar);
-
 const fecha = new Date();
 
 //variable que obtiene la hora actual
