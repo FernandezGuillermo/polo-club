@@ -59,9 +59,13 @@ a.navbar-brand:hover{
     background-color: rgba(16, 38, 73, 1);
 }
 
+.footer-logo{
+    height: auto;
+}
+
 .footer__text{
     color: white;
-    font-size: 80px;
+    font-size: 15px;
     font-family: 'Manrope', sans-serif;
 }
 
