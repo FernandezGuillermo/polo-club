@@ -1,3 +1,4 @@
+
 //Create a nav bar whith bootstrap
 const navBar = document.getElementById("navBar");
 navBar.innerHTML = `
