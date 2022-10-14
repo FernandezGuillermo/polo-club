@@ -21,7 +21,9 @@ navBar.innerHTML = `
                             <a class="nav-link" href="signIn.html">Sign In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contacto</a>
+                        <a class="navbar-brand" href="carrito.html">
+                            <img src="../resources/img-carrito.png" alt="Logo Polo" width="20" height="20">
+                        </a>
                         </li>       
                         </ul>
                     </div>
