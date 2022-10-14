@@ -1,5 +1,8 @@
 [
-    {"nombre":"Jean Alabama","id":1,"talle40":0,"talle42":7,"talle44":3,"talle46":8,"talle48":10,"talle50":5,"precio":15000,"img":"./source/JeanAlabama.jpeg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
-    {"nombre":"Jean Kansas","id":2,"talle40":7,"talle42":20,"talle44":15,"talle46":4,"talle48":0,"talle50":0,"precio":11000,"img":"./source/JeanKansas.jpeg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO. CALCE SLIM."},
-    {"nombre":"Jean Arizona","id":3,"talle40":15,"talle42":45,"talle44":0,"talle46":8,"talle48":17,"talle50":20,"precio":7850,"img":"./source/JeanArizona.jpeg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"}
+    {"nombre":"Jean Alabama","id":1,"talle40":0,"talle42":7,"talle44":3,"talle46":8,"talle48":10,"talle50":5,"precio":15000,"img":"../resources/img-1.png","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
+    {"nombre":"Jean Kansas","id":2,"talle40":7,"talle42":20,"talle44":15,"talle46":4,"talle48":0,"talle50":0,"precio":11000,"img":"../resources/img-2.jpg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
+    {"nombre":"Jean Arizona","id":3,"talle40":15,"talle42":45,"talle44":0,"talle46":8,"talle48":17,"talle50":20,"precio":7850,"img":"../resources/img-3.jpg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
+    {"nombre":"Jean Arizona","id":4,"talle40":15,"talle42":45,"talle44":0,"talle46":8,"talle48":17,"talle50":20,"precio":7850,"img":"../resources/img-4.png","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
+    {"nombre":"Jean Arizona","id":5,"talle40":15,"talle42":45,"talle44":0,"talle46":8,"talle48":17,"talle50":20,"precio":7850,"img":"../resources/img-5.png","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"},
+    {"nombre":"Jean Arizona","id":6,"talle40":15,"talle42":45,"talle44":0,"talle46":8,"talle48":17,"talle50":20,"precio":7850,"img":"../resources/img-6.jpg","descripcion":"JEANS DE CINCO BOLSILLOS. DENIM 76% ALGODÓN 23% POLYESTER 1% ELASTANO"}
 ]

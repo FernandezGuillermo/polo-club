@@ -7,6 +7,10 @@ main{
     background-color: #9d0703;
 }
 
+.background-main{
+    background-color: white;
+}
+
 .bg-color{
     background-color: rgba(16, 38, 73, 1);
 }
@@ -26,6 +30,10 @@ a.navbar-brand{
 
 a.navbar-brand:hover{
     color: #9d0703;
+}
+
+.portada{
+    width: 100%;
 }
 
 .text-marca{
@@ -69,6 +77,12 @@ a.navbar-brand:hover{
     font-family: 'Manrope', sans-serif;
 }
 
+.footer-text-logo{
+    color: white;
+    font-size: 15px;
+    font-family: 'Manrope', sans-serif;
+}
+
 .footer__direccion{
     color: white;
 }
@@ -91,4 +105,10 @@ a.navbar-brand:hover{
 
 .footer__cel{
     height: 40px;
+}
+
+.card{
+    background-color: #ffffff4d;
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px)
 }

@@ -1,5 +1,5 @@
 
-const contenedorProductos = document.getElementById('contenedorProductos');
+const contenedorProductos = document.getElementById("contenedorProductos");
 
 //Funcion que crea tarjetas dependiendo la cantidad de productos que tenga en el stock de jean
 function mostrarProductos(items){
@@ -28,7 +28,8 @@ function mostrarProductos(items){
             <button id="agregar${element.id}" class="btn btn-primary">Agregar al carrito</button>
             </div>
         `
-
+        contenedorProductos.appendChild(card);
+        
         let botonAgregar=document.getElementById(`agregar${element.id}`);
         
         botonAgregar.addEventListener("click", ()=>{
@@ -39,9 +40,9 @@ function mostrarProductos(items){
         })
     }
 
-const contenedorCarrito = document.getElementById("contenedorCarrito"); 
+    const contenedorCarrito = document.getElementById("contenedorCarrito"); 
 
-const stockProductos = "json/productos.json";
+const stockProductos = "../json/productos.json"; 
 
 fetch(stockProductos)
     .then(respuesta => respuesta.json())

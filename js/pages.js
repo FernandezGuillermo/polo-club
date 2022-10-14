@@ -50,10 +50,9 @@ footer.innerHTML = `
                 </div>
             </article>
             <article class="row">
-                <div class="float-end">
+                <div>
                     <p class="footer__text text-center">© Todos los derechos reservados</p>
                 </div>
             </article>
 `
-
 
