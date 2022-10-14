@@ -1,6 +1,3 @@
-
-const contenedorProductos = document.getElementById("contenedorProductos");
-
 class Item{
     //Constructor
     constructor(nombre,talle,precio){
@@ -12,6 +9,8 @@ class Item{
 
 //Creo array para carrito
 const carrito =[];
+
+const contenedorProductos = document.getElementById("contenedorProductos");
 
 //Funcion que crea tarjetas dependiendo la cantidad de productos que tenga en el stock de jean
 function mostrarProductos(items){
@@ -47,7 +46,6 @@ function mostrarProductos(items){
         botonAgregar.addEventListener("click", ()=>{
             const talle = document.getElementById(`opcionProducto${element.id}`).value;
             talle === "Elija el" ? alert("Elija el talle de jean que quiere agregar al carrito") : agregarAlCarrito(element.nombre,talle,element.precio); 
-            console.log(carrito);
             });
         })
     }
@@ -68,7 +66,32 @@ fetch(stockProductos)
     function agregarAlCarrito(nombre,talle,precio){
     const item = new Item (nombre,talle,precio);
     carrito.push(item);
+    localStorage.setItem("carrito",JSON.stringify(carrito));
 }
+
+const contenedorCarrito = document.getElementById("contenedorCarrito");
+
+    //Funcion que actualiza el carrito
+    function actualizarCarrito(){
+        let aux = "";
+        carrito.forEach(producto => {
+            aux += `
+                    <p>Producto agregado: ${producto.nombre}</p>
+                    <p>Talle: ${producto.talle}</p>
+                    <p>Precio: $${producto.precio}</p>
+                    <button onClick = "eliminarDelCarrito(${producto.id})" class="btn btn-primary"> Eliminar del Carrito </button>
+            `
+        })
+        contenedorCarrito.innerHTML = aux;
+    }
+    
+    //Funcion que elimina el producto del carrito
+    const eliminarDelCarrito = (id) => {
+        const producto = carrito.find(producto => producto.id === id);
+        carrito.splice(carrito.indexOf(producto),1);
+        actualizarCarrito();
+    }
+
 
 
 

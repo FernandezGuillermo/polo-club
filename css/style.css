@@ -112,3 +112,17 @@ a.navbar-brand:hover{
     backdrop-filter:blur(3px);
     -webkit-backdrop-filter:blur(3px)
 }
+
+.btn{
+    width: 100%;
+    background-color:rgba(16, 38, 73, 1);
+}
+
+.btn:hover{
+    background-color: #9d0703;
+}
+
+.img-polo-signIn{
+    height: auto;
+    width: 100%;
+}
