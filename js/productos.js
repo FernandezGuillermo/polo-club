@@ -69,7 +69,7 @@ fetch(stockProductos)
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
-const contenedorCarrito = document.getElementById("contenedorCarrito");
+const contenedorCarrito = document.getElementById("contenedorCarritos");
 
     //Funcion que actualiza el carrito
     function actualizarCarrito(){
