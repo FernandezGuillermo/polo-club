@@ -16,7 +16,7 @@ function mostrarCarrito(items){
                         <div class="card" style="max-width: 600px;">
                             <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="../resources/img-1.png" class="img-fluid rounded-start" alt="...">
+                                <img src= ${element.img} class="img-fluid rounded-start" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -34,7 +34,7 @@ function mostrarCarrito(items){
     });
 }
 
-/*     //Funcion que actualiza el carrito
+/*      //Funcion que actualiza el carrito
     function actualizarCarrito(){
         let aux = "";
         b.forEach(producto => {
@@ -46,14 +46,14 @@ function mostrarCarrito(items){
             `
         })
         contenedorCarrito.innerHTML = aux;
-    }
+    } */
     
-    //Funcion que elimina el producto del carrito
+ //Funcion que elimina el producto del carrito
     const eliminarDelCarrito = (id) => {
         const producto = carrito.find(producto => producto.id === id);
         carrito.splice(carrito.indexOf(producto),1);
         actualizarCarrito();
-    } */
+    } 
 
 mostrarCarrito(b);
 

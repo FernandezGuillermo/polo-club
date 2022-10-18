@@ -1,9 +1,11 @@
 class Item{
     //Constructor
-    constructor(nombre,talle,precio){
+    constructor(nombre,talle,precio,img,id){
         this.nombre = nombre;
         this.talle = talle;
         this.precio = precio;
+        this.img = img;
+        this.id = id;
     }
 }
 
@@ -46,7 +48,7 @@ function mostrarProductos(items){
         
         botonAgregar.addEventListener("click", ()=>{
             const talle = document.getElementById(`opcionProducto${element.id}`).value;
-            talle === "Elija el" ? alert("Elija el talle de jean que quiere agregar al carrito") : agregarAlCarrito(element.nombre,talle,element.precio); 
+            talle === "Elija el" ? alert("Elija el talle de jean que quiere agregar al carrito") : agregarAlCarrito(element.nombre,talle,element.precio,element.imagen,element.id); 
             });
         })
     }
@@ -64,8 +66,9 @@ fetch(stockProductos)
 
 
     //Funcion que agrega al carrito el item selecionado
-    function agregarAlCarrito(nombre,talle,precio){
-    const item = new Item (nombre,talle,precio);
+    function agregarAlCarrito(nombre,talle,precio,img,id){
+    const item = new Item (nombre,talle,precio,img,id);
+    carrito.push(item);
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
