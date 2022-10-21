@@ -17,6 +17,7 @@ const contenedorProductos = document.getElementById("contenedorProductos");
 
 //Funcion que crea tarjetas dependiendo la cantidad de productos que tenga en el stock de jean
 function mostrarProductos(items){
+    let card = "";
     items.forEach(element => {
         let card = document.createElement("div")
         card.classList.add("card")
@@ -48,7 +49,7 @@ function mostrarProductos(items){
         
         botonAgregar.addEventListener("click", ()=>{
             const talle = document.getElementById(`opcionProducto${element.id}`).value;
-            talle === "Elija el" ? alert("Elija el talle de jean que quiere agregar al carrito") : agregarAlCarrito(element.nombre,talle,element.precio,element.imagen,element.id); 
+            talle === "Elija el" ? alertWrong() : agregarAlCarrito(element.nombre,talle,element.precio,element.img,element.id); 
             });
         })
     }
@@ -70,6 +71,14 @@ fetch(stockProductos)
     const item = new Item (nombre,talle,precio,img,id);
     carrito.push(item);
     localStorage.setItem("carrito",JSON.stringify(carrito));
+}
+
+function alertWrong(){
+    Swal.fire({
+        icon: 'error',
+        title: 'No ingreso al carrito',
+        text: 'Elija el talle de jean que quiere agregar al carrito',
+    })
 }
 
 

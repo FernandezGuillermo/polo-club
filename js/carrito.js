@@ -1,59 +1,40 @@
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 const a = localStorage.getItem("carrito");
-const b = JSON.parse(a);
+const carrito = JSON.parse(a);
 console.log(a);
-console.log(b);
+console.log(carrito);
 
-
-
-
-function mostrarCarrito(items){
-    items.forEach(element => {
-        let card = document.createElement("div");
-        card.classList.add("card");
-        card.style="width :18rem;"
-        card.innerHTML = `
-                        <div class="card" style="max-width: 600px;">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src= ${element.img} class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                <h5 class="card-title">${element.nombre}</h5>
-                                <button type="button" class="btn-close position-absolute top-0 end-0" aria-label="Close"></button>
-                                <p class="card-text">Talle: ${element.talle}</p>
-                                <p class="card-text">Precio: $${element.precio}</p>
-                                <button class="btn btn-primary">Pagar</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-        `
-        contenedorCarrito.appendChild(card);
-    });
-}
-
-/*      //Funcion que actualiza el carrito
-    function actualizarCarrito(){
-        let aux = "";
-        b.forEach(producto => {
-            aux += `
-                    <p>Producto agregado: ${producto.nombre}</p>
-                    <p>Talle: ${producto.talle}</p>
-                    <p>Precio: $${producto.precio}</p>
-                    <button onClick = "eliminarDelCarrito(${producto.id})" class="btn btn-primary"> Eliminar del Carrito </button>
-            `
-        })
-        contenedorCarrito.innerHTML = aux;
-    } */
     
- //Funcion que elimina el producto del carrito
+    //Funcion que elimina el producto del carrito
     const eliminarDelCarrito = (id) => {
         const producto = carrito.find(producto => producto.id === id);
         carrito.splice(carrito.indexOf(producto),1);
         actualizarCarrito();
     } 
 
-mostrarCarrito(b);
+function actualizarCarrito(){
+    let card = "";
+    carrito.forEach(producto => {
+        card += `
+            <div class="card m-3" style="max-width: 600px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src= ${producto.img} class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <button onClick = "eliminarDelCarrito(${producto.id})" type="button" class="btn-close position-absolute top-0 end-0" aria-label="Close" id="eliminar${producto.id}"></button>
+                <p class="card-text">Talle: ${producto.talle}</p>
+                <p class="card-text">Precio: $${producto.precio}</p>
+                <button class="btn btn-primary">Pagar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        `
+    })
+    contenedorCarrito.innerHTML = card;
+}
 
+actualizarCarrito();
