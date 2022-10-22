@@ -16,7 +16,7 @@ function actualizarCarrito(){
     let card = "";
     carrito.forEach(producto => {
         card += `
-            <div class="card m-3" style="max-width: 600px;">
+            <div class="card m-3" style="max-width:400px;">
             <div class="row g-0">
             <div class="col-md-4">
                 <img src= ${producto.img} class="img-fluid rounded-start" alt="...">
