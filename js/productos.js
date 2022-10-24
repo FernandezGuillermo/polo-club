@@ -10,7 +10,7 @@ class Item{
 }
 
 //Creo array para carrito
-const carrito =[];
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 //Tomo el div llamado contenedorProductos
 const contenedorProductos = document.getElementById("contenedorProductos");
@@ -82,7 +82,7 @@ function alertWrong(){
 }
 
 
-
+console.log(carrito.length);
 
 
 

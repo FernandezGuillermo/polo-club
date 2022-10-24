@@ -9,6 +9,7 @@ console.log(carrito);
     const eliminarDelCarrito = (id) => {
         const producto = carrito.find(producto => producto.id === id);
         carrito.splice(carrito.indexOf(producto),1);
+        localStorage.setItem('carrito',JSON.stringify(carrito));
         actualizarCarrito();
     } 
 
