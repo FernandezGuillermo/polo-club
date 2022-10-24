@@ -82,7 +82,7 @@ function alertWrong(){
 }
 
 
-console.log(carrito.length);
+
 
 
 

@@ -1,3 +1,4 @@
+const carrito = JSON.parse(localStorage.getItem('carrito'));
 
 //Create a nav bar whith bootstrap
 const navBar = document.getElementById("navBar");
@@ -25,7 +26,7 @@ navBar.innerHTML = `
                             <a class="navbar-brand" href="pages/carrito.html">
                                 <img src="../resources/img-carrito.png" alt="Logo Polo" width="20" height="20">
                                 <span class="position-absolute top-20 start-92 translate-middle badge rounded-pill bg-danger">
-                                1
+                                ${carrito.length}
                                 <span class="visually-hidden">unread messages</span>
                             </a>
                         </li>       
@@ -50,3 +51,4 @@ function saludar(){
 }
 
 saludar();
+
