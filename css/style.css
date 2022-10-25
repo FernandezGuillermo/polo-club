@@ -126,3 +126,9 @@ a.navbar-brand:hover{
     height: auto;
     width: 100%;
 }
+
+.text-h1{
+    font-family: 'Manrope', sans-serif;
+    color: rgba(16, 38, 73, 1);
+    font-size: 2rem;
+}
