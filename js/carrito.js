@@ -40,9 +40,26 @@ function actualizarCarrito(){
 
 function pagar(carrito){
     if ( carrito.length != 0){
-        console.log("el carrito tiene algo");
+        let card = document.createElement("div");
+        card.innerHTML = `
+                            <div class="card" style="width: 100%;">
+                                <div class="card-body">
+                                <h5 class="card-title text-center">Productos</h5>
+                                <p class="card-text">Cantidad de productos: ${carrito.length}</p>
+                                <p class="card-text">Cantidad de productos: ${sumarCompra(carrito)}</p>
+                                <a href="../pages/products.html" class="btn btn-primary">PAGAR</a>
+                                </div>
+                            </div>
+                            <div class="card mt-3" style="width: 100%;">
+                                <div class="card-body">
+                                <h5 class="card-title text-center">Necesitas ayuda</h5>
+                                <p class="card-text text-center">Ponete en contacto con nosotros o visita nuestro local</p>
+                                <p class="card-text text-center">Lehmann 1339 - +54 342 530-4765</p>
+                                </div>
+                            </div>
+                        `
+        contenedorPagar.appendChild(card);
     }else{
-        console.log("el carrito esta vacio");
         let card = document.createElement("div");
         card.innerHTML = `
                             <div class="card" style="width: 100%;">
@@ -50,6 +67,13 @@ function pagar(carrito){
                                 <h5 class="card-title text-center">Tu carrito esta vacio</h5>
                                 <p class="card-text">Echa un vistazo a nuestra coleccion, seguro que encuentras lo que necesitas.</p>
                                 <a href="../pages/products.html" class="btn btn-primary">SEGUIR COMPRANDO</a>
+                                </div>
+                            </div>
+                            <div class="card mt-3" style="width: 100%;">
+                                <div class="card-body">
+                                <h5 class="card-title text-center">Necesitas ayuda</h5>
+                                <p class="card-text text-center">Ponete en contacto con nosotros o visita nuestro local</p>
+                                <p class="card-text text-center">Lehmann 1339 - +54 342 530-4765</p>
                                 </div>
                             </div>
                         `
@@ -62,7 +86,7 @@ function sumarCompra(item){
     let total = 0;
     item.forEach(producto =>{
         total += producto.precio;
-        console.log(total);
+        return total;
     })
 }
 
