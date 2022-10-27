@@ -7,6 +7,10 @@ main{
     background-color: #9d0703;
 }
 
+body{
+    height: 100%;
+}
+
 .background-main{
     background-color: white;
 }
@@ -127,8 +131,14 @@ a.navbar-brand:hover{
     width: 100%;
 }
 
+.img-polo-carrito{
+    height: auto;
+    width: 100%;
+}
+
 .text-h1{
     font-family: 'Manrope', sans-serif;
     color: rgba(16, 38, 73, 1);
     font-size: 2rem;
 }
+

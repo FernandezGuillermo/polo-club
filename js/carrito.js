@@ -86,8 +86,8 @@ function sumarCompra(item){
     let total = 0;
     item.forEach(producto =>{
         total += producto.precio;
-        return total;
     })
+    return total;
 }
 
 actualizarCarrito();
