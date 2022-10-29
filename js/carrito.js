@@ -1,8 +1,7 @@
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 const contenedorPagar = document.getElementById("contenedorPagar");
-const a = localStorage.getItem("carrito");
-const carrito = JSON.parse(a);
-console.log(a);
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
 console.log(carrito);
 
     
@@ -11,6 +10,7 @@ console.log(carrito);
         const producto = carrito.find(producto => producto.id === id);
         carrito.splice(carrito.indexOf(producto),1);
         localStorage.setItem('carrito',JSON.stringify(carrito));
+        document.getElementById('cartCount').innerHTML = carrito.length;
         actualizarCarrito();
     } 
 
@@ -45,7 +45,7 @@ function pagar(carrito){
                             <div class="card" style="width: 100%;">
                                 <div class="card-body">
                                 <h5 class="card-title text-center">Productos</h5>
-                                <p class="card-text">Cantidad de productos: ${carrito.length}</p>
+                                <p class="card-text" id="cartCount">Cantidad de productos: ${carrito.length}</p>
                                 <p class="card-text">Cantidad de productos: ${sumarCompra(carrito)}</p>
                                 <a href="../pages/products.html" class="btn btn-primary">PAGAR</a>
                                 </div>
@@ -86,7 +86,9 @@ function sumarCompra(item){
     let total = 0;
     item.forEach(producto =>{
         total += producto.precio;
+        document.getElementById('cartCount').innerHTML = item.length;
     })
+    
     return total;
 }
 

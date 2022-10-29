@@ -71,6 +71,7 @@ fetch(stockProductos)
     const item = new Item (nombre,talle,precio,img,id);
     carrito.push(item);
     localStorage.setItem("carrito",JSON.stringify(carrito));
+    document.getElementById('cartCount').innerHTML = carrito.length;
 }
 
 function alertWrong(){
