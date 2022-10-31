@@ -12,6 +12,7 @@ const eliminarDelCarrito = (id) => {
     localStorage.setItem('carrito',JSON.stringify(carrito));
     document.getElementById('cartCount').innerHTML = carrito.length;
     actualizarCarrito();
+    pagar(carrito);
 } 
 
 //Funcion que actuliza el carrito
@@ -41,8 +42,10 @@ function actualizarCarrito(){
 
 //Funcion que realiza el pago de los items
 function pagar(carrito){
+    let card = document.createElement("div");
+    contenedorPagar.innerHTML = "";
     if ( carrito.length != []){
-        let card = document.createElement("div");
+        
         card.innerHTML = `
                             <div class="card" style="width: 100%;">
                                 <div class="card-body">
@@ -68,7 +71,7 @@ function pagar(carrito){
             aceptarPago();
         })
     }else{
-        let card = document.createElement("div");
+
         card.innerHTML = `
                             <div class="card" style="width: 100%;">
                                 <div class="card-body">

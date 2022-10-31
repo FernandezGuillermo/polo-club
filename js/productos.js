@@ -9,6 +9,7 @@ class Item{
     }
 }
 
+
 //Creo array para carrito
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -32,12 +33,12 @@ function mostrarProductos(items){
             <div class="input-group mb-3">
             <select class="form-select" id="opcionProducto${element.id}">
                 <option selected id="2">Elija el</option>
-                <option value="40">40</option>
-                <option value="42">42</option>
-                <option value="44">44</option>
-                <option value="46">46</option>
-                <option value="48">48</option>
-                <option value="50">50</option>
+                <option id="talle40" value="40">40</option>
+                <option id="talle42" value="42">42</option>
+                <option id="talle44" value="44">44</option>
+                <option id="talle46" value="46">46</option>
+                <option id="talle48" value="48">48</option>
+                <option id="talle50" value="50">50</option>
             </select>
             <label class="input-group-text" for="inputGroupSelect02">Talle</label>
             </div>
@@ -76,6 +77,7 @@ fetch(stockProductos)
     document.getElementById('cartCount').innerHTML = carrito.length;
 }
 
+//Funcion que arroja un alert cuando no elijo que talle voy a llevar
 function alertWrong(){
     Swal.fire({
         icon: 'error',
@@ -84,9 +86,21 @@ function alertWrong(){
     })
 }
 
+fetch(stockProductos)
+    .then(respuesta => respuesta.json())
+    .then((datos) => {
+        validarTalles(datos);
+    })
+    .catch(error => console.log(error))
+    .finally(() => console.log("Proceso Finalizado"));
 
-
-
-
+function validarTalles(items){
+    const talle40 = items.filter(producto => producto.talle40 == 0);
+    console.log(talle40);
+    const is = document.getElementById("talle40");
+    for(let i=0;i<talle40.length;i++){
+        document.getElementById("talle40").disabled = "disabled";
+    }
+}
 
 

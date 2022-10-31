@@ -1,6 +1,6 @@
 const items = JSON.parse(localStorage.getItem('carrito')) || [];
 
-//Create a nav bar whith bootstrap
+//Creo una navBar con bootstrap
 const navBar = document.getElementById("navBar");
 navBar.innerHTML = `
                     <nav class="navbar navbar-expand-lg bg-color"> <!--NAV BAR-->
@@ -26,7 +26,7 @@ navBar.innerHTML = `
                         <a class="navbar-brand" href="carrito.html">
                             <img src="../resources/img-carrito.png" alt="Logo Polo" width="20" height="20">
                             <span id="cartCount" class="position-absolute top-20 start-92 translate-middle badge rounded-pill bg-danger">
-                                ${items.length}
+                                ${items.length} <!-- Cambio el valor del numero del span --!>
                             <span class="visually-hidden">unread messages</span>
                         </a>
                         </li>       
@@ -38,7 +38,7 @@ navBar.innerHTML = `
 
 const footer = document.getElementById("footer");
 
-//Create a footer whit bootstrap
+//Creo una footer con bootstrap
 footer.innerHTML = `
                 <article class="row">
                 <div class="col-xl-3 my-auto text-center footer__text">

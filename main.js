@@ -26,7 +26,7 @@ navBar.innerHTML = `
                             <a class="navbar-brand" href="pages/carrito.html">
                                 <img src="../resources/img-carrito.png" alt="Logo Polo" width="20" height="20">
                                 <span id="cartCount" class="position-absolute top-20 start-92 translate-middle badge rounded-pill bg-danger">
-                                ${carrito.length}
+                                ${carrito.length} <!-- Cambio el valor del numero del span --!>
                                 <span class="visually-hidden">unread messages</span>
                             </a>
                         </li>       
@@ -35,7 +35,7 @@ navBar.innerHTML = `
                     </div>
                     </nav>     
                     `
-
+//Creo variable para alojar fecha
 const fecha = new Date();
 
 //variable que obtiene la hora actual
