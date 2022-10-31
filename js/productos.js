@@ -23,6 +23,7 @@ function mostrarProductos(items){
         card.classList.add("card")
         card.style="width: 18rem;"
         card.innerHTML=`
+            <div class="col-xl-12 col-md-12 col-sm-1">
             <img src=${element.img} class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">${element.nombre}</h5>
@@ -41,6 +42,7 @@ function mostrarProductos(items){
             <label class="input-group-text" for="inputGroupSelect02">Talle</label>
             </div>
             <button id="agregar${element.id}" class="btn btn-primary">Agregar al carrito</button>
+            </div>
             </div>
         `
         contenedorProductos.appendChild(card);

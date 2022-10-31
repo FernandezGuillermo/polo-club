@@ -32,6 +32,10 @@ a.navbar-brand:hover{
     color: #9d0703;
 }
 
+.navbar-toggler{
+    background-color: white;
+}
+
 .portada{
     width: 100%;
 }

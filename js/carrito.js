@@ -5,15 +5,16 @@ const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 console.log(carrito);
 
     
-    //Funcion que elimina el producto del carrito
-    const eliminarDelCarrito = (id) => {
-        const producto = carrito.find(producto => producto.id === id);
-        carrito.splice(carrito.indexOf(producto),1);
-        localStorage.setItem('carrito',JSON.stringify(carrito));
-        document.getElementById('cartCount').innerHTML = carrito.length;
-        actualizarCarrito();
-    } 
+//Funcion que elimina el producto del carrito
+const eliminarDelCarrito = (id) => {
+    const producto = carrito.find(producto => producto.id === id);
+    carrito.splice(carrito.indexOf(producto),1);
+    localStorage.setItem('carrito',JSON.stringify(carrito));
+    document.getElementById('cartCount').innerHTML = carrito.length;
+    actualizarCarrito();
+} 
 
+//Funcion que actuliza el carrito
 function actualizarCarrito(){
     let card = "";
     carrito.forEach(producto => {
@@ -38,6 +39,7 @@ function actualizarCarrito(){
     contenedorCarrito.innerHTML = card;
 }
 
+//Funcion que realiza el pago de los items
 function pagar(carrito){
     if ( carrito.length != []){
         let card = document.createElement("div");
@@ -88,7 +90,7 @@ function pagar(carrito){
     }
 }
 
-
+//Funcion que suma y retorna el precio total
 function sumarCompra(item){
     let total = 0;
     item.forEach(producto =>{
@@ -97,6 +99,7 @@ function sumarCompra(item){
     return total;
 }
 
+//Funcion para aceptar o no el pago
 function aceptarPago(){
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
