@@ -39,7 +39,7 @@ function actualizarCarrito(){
 }
 
 function pagar(carrito){
-    if ( carrito.length != 0){
+    if ( carrito.length != []){
         let card = document.createElement("div");
         card.innerHTML = `
                             <div class="card" style="width: 100%;">
@@ -47,7 +47,7 @@ function pagar(carrito){
                                 <h5 class="card-title text-center">Productos</h5>
                                 <p class="card-text" id="cartCount">Cantidad de productos: ${carrito.length}</p>
                                 <p class="card-text">Cantidad de productos: ${sumarCompra(carrito)}</p>
-                                <a href="../pages/products.html" class="btn btn-primary">PAGAR</a>
+                                <button id="pagar${carrito.id}" class="btn btn-primary">PAGAR</button>
                                 </div>
                             </div>
                             <div class="card mt-3" style="width: 100%;">
@@ -59,6 +59,12 @@ function pagar(carrito){
                             </div>
                         `
         contenedorPagar.appendChild(card);
+        //Capturo el boton pagar
+        let botonPagar = document.getElementById(`pagar${carrito.id}`);
+        //Escucho el evento click en el boton pagar
+        botonPagar.addEventListener("click",()=>{
+            aceptarPago();
+        })
     }else{
         let card = document.createElement("div");
         card.innerHTML = `
@@ -78,6 +84,7 @@ function pagar(carrito){
                             </div>
                         `
         contenedorPagar.appendChild(card);
+        actualizarCarrito();
     }
 }
 
@@ -85,11 +92,45 @@ function pagar(carrito){
 function sumarCompra(item){
     let total = 0;
     item.forEach(producto =>{
-        total += producto.precio;
-        document.getElementById('cartCount').innerHTML = item.length;
+        total += producto.precio;        
     })
-    
     return total;
+}
+
+function aceptarPago(){
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+    swalWithBootstrapButtons.fire({
+        title: 'Estas por finalizar la compra',
+        text: "Gracias por comprarnos",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Acepto',
+        cancelButtonText: 'Seguir Comprando',
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+                'Has finalizado',
+                'Gracias por comprarnos.',
+                'success'
+        )
+        } else if (
+          /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+            'No has finalizado la compra',
+            'Sigue comprando',
+            'error'
+        )
+        }
+    })
 }
 
 actualizarCarrito();
