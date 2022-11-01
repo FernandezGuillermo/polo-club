@@ -33,12 +33,12 @@ function mostrarProductos(items){
             <div class="input-group mb-3">
             <select class="form-select" id="opcionProducto${element.id}">
                 <option selected id="2">Elija el</option>
-                <option id="talle40" value="40">40</option>
-                <option id="talle42" value="42">42</option>
-                <option id="talle44" value="44">44</option>
-                <option id="talle46" value="46">46</option>
-                <option id="talle48" value="48">48</option>
-                <option id="talle50" value="50">50</option>
+                <option id="talle40${element.id}" value="40">40</option>
+                <option id="talle42${element.id}" value="42">42</option>
+                <option id="talle44${element.id}" value="44">44</option>
+                <option id="talle46${element.id}" value="46">46</option>
+                <option id="talle48${element.id}" value="48">48</option>
+                <option id="talle50${element.id}" value="50">50</option>
             </select>
             <label class="input-group-text" for="inputGroupSelect02">Talle</label>
             </div>
@@ -96,11 +96,36 @@ fetch(stockProductos)
 
 function validarTalles(items){
     const talle40 = items.filter(producto => producto.talle40 == 0);
-    console.log(talle40);
-    const is = document.getElementById("talle40");
-    for(let i=0;i<talle40.length;i++){
-        document.getElementById("talle40").disabled = "disabled";
-    }
+    const talle42 = items.filter(producto => producto.talle42 == 0);
+    const talle44 = items.filter(producto => producto.talle44 == 0);
+    const talle46 = items.filter(producto => producto.talle46 == 0);
+    const talle48 = items.filter(producto => producto.talle48 == 0);
+    const talle50 = items.filter(producto => producto.talle50 == 0);
+    
+    talle40.forEach(element =>{
+        document.getElementById(`talle40${element.id}`).disabled = "disabled";
+    })
+
+    talle42.forEach(element =>{
+        document.getElementById(`talle42${element.id}`).disabled = "disabled";
+    })
+
+    talle44.forEach(element =>{
+        document.getElementById(`talle44${element.id}`).disabled = "disabled";
+    })
+
+    talle46.forEach(element =>{
+        document.getElementById(`talle46${element.id}`).disabled = "disabled";
+    })
+
+    talle48.forEach(element =>{
+        document.getElementById(`talle48${element.id}`).disabled = "disabled";
+    })
+
+    talle50.forEach(element =>{
+        document.getElementById(`talle50${element.id}`).disabled = "disabled";
+    })
+
 }
 
 
