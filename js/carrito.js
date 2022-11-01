@@ -15,6 +15,16 @@ const eliminarDelCarrito = (id) => {
     pagar(carrito);
 } 
 
+const vaciarCarrito = (id) => {
+    const producto = carrito.find(producto => producto.id === id);
+    carrito.splice(carrito.indexOf(producto));
+    localStorage.setItem('carrito',JSON.stringify(carrito));
+    document.getElementById('cartCount').innerHTML = carrito.length;
+    actualizarCarrito();
+    pagar(carrito);
+} 
+
+
 //Funcion que actuliza el carrito
 function actualizarCarrito(){
     let card = "";
@@ -45,7 +55,6 @@ function pagar(carrito){
     let card = document.createElement("div");
     contenedorPagar.innerHTML = "";
     if ( carrito.length != []){
-        
         card.innerHTML = `
                             <div class="card" style="width: 100%;">
                                 <div class="card-body">
@@ -126,6 +135,10 @@ function aceptarPago(){
                 'Gracias por comprarnos.',
                 'success'
         )
+        //cuando termino de comprar vacio el carrito
+        carrito.forEach(producto => {
+            vaciarCarrito(producto.id);
+        })  
         } else if (
           /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
