@@ -2,9 +2,6 @@ const contenedorCarrito = document.getElementById("contenedorCarrito");
 const contenedorPagar = document.getElementById("contenedorPagar");
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-console.log(carrito);
-
-    
 //Funcion que elimina el producto del carrito
 const eliminarDelCarrito = (id) => {
     const producto = carrito.find(producto => producto.id === id);
@@ -15,6 +12,7 @@ const eliminarDelCarrito = (id) => {
     pagar(carrito);
 } 
 
+//Funcion que vacia el carrito una vez que finalizamos la compra
 const vaciarCarrito = (id) => {
     const producto = carrito.find(producto => producto.id === id);
     carrito.splice(carrito.indexOf(producto));
@@ -23,7 +21,6 @@ const vaciarCarrito = (id) => {
     actualizarCarrito();
     pagar(carrito);
 } 
-
 
 //Funcion que actuliza el carrito
 function actualizarCarrito(){
@@ -153,6 +150,5 @@ function aceptarPago(){
 }
 
 actualizarCarrito();
-
 sumarCompra(carrito);
 pagar(carrito);

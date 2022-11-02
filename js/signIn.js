@@ -7,10 +7,10 @@ class User{
     }
 }
 
-//array que guarda los usuarios
+//Array que guarda los usuarios
 const users = JSON.parse(localStorage.getItem('usuario')) || [];
 
-//usuarios
+//Usuarios
 const guillermo = new User("guille86","fernandez_guillermo@outlook.com","167524893");
 const florencia = new User("flor_98","m.floreciaperez@hotmail.com","morcilla");
 
@@ -19,7 +19,7 @@ users.push(guillermo);
 users.push(florencia);
 
 
-//guardo en el storage los usuarios ya cargados
+//Guardo en el storage los usuarios ya cargados
 localStorage.setItem("Usuario",JSON.stringify(users));
 
 //Tomamos el formulario creado en htmal
@@ -35,7 +35,7 @@ idFormulario.addEventListener("submit",(e)=>{
 
     //verifico el usuario si esta ingresado cambio el estilo de bootstrap
     if(verificarUsuario(user)) invalidarUsuario();
-     
+    
     //verifico el email si esta ingresado cambio el estilo de bootstrap
     if(verificarMail(email)) invalidarEmail();
 
@@ -48,21 +48,21 @@ idFormulario.addEventListener("submit",(e)=>{
 
 const userFormulario = document.getElementById("user");
 
-//funcion que verifica el usuario
+//Funcion que verifica el usuario
 function verificarUsuario(userName){
     let user = localStorage.getItem("Usuario",JSON.stringify(users));
     user = users.find(user => user.userName === userName);
     if(user != undefined) return true;
 }
 
-//funcion que verifica el mail
+//Funcion que verifica el mail
 function verificarMail(userEmail){
     let email = localStorage.getItem("Usuario",JSON.stringify(users));
     email = users.find(user => user.email === userEmail);
     if(email != undefined) return true;
 }
 
-//funcion que me cambia el estilo del input del formulario con bootstrap
+//Funcion que me cambia el estilo del input del formulario con bootstrap
 function invalidarUsuario(){ 
     const userFormulario = document.getElementById("user");
     userFormulario.className = "form-control is-invalid";
@@ -73,7 +73,7 @@ function invalidarUsuario(){
     userFormulario.id = "user";
 }
 
-//funcion que me cambia el estilo del input del formulario con bootstrap
+//Funcion que me cambia el estilo del input del formulario con bootstrap
 function invalidarEmail(){ 
     const emailFormulario = document.getElementById("email");
     emailFormulario.className = "form-control is-invalid";
@@ -86,7 +86,7 @@ function invalidarEmail(){
 }
 
 
-//funcion que registra el usuario
+//Funcion que registra el usuario
 function registrarUsuario(user,email,password){
     //Creamos el objeto usuario
     const usuario = new User(user,email,password);
@@ -100,6 +100,7 @@ function registrarUsuario(user,email,password){
     alertOk();
 }
 
+//Funcion que limpia el formulario
 let btnLimpiarForm = document.getElementById ("btnLimpiarForm");
 btnLimpiarForm.onclick = () => {
     const userFormulario = document.getElementById("user");
@@ -108,6 +109,7 @@ btnLimpiarForm.onclick = () => {
     emailFormulario.className = "form-control";
 };
 
+//Funcion alert de registro exitoso
 function alertOk(){
     Swal.fire({
         position: 'top-end',
@@ -118,6 +120,7 @@ function alertOk(){
         })
 }
 
+//Funcion alert de registro invalido
 function alertWrong(){
     Swal.fire({
         icon: 'error',

@@ -38,7 +38,7 @@ navBar.innerHTML = `
 //Creo variable para alojar fecha
 const fecha = new Date();
 
-//variable que obtiene la hora actual
+//Variable que obtiene la hora actual
 let hora = fecha.getHours();
 
 const saludo = document.getElementById("text-portada");
