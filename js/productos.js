@@ -123,7 +123,6 @@ function validarTalles(items) {
 //Funcion que selecciona por id el producto y lo resta depediendo del talle seleccionado en el select
 function restarStock(items,id,talle){
     const productoSeleccionado = items.find(producto => producto.id === id);
-    console.log(items);
     switch(talle){
         case 40: productoSeleccionado.talle40 --;
         break;
@@ -138,7 +137,6 @@ function restarStock(items,id,talle){
         case 50: productoSeleccionado.talle50 --;
         break;
     }
-    console.log(productoSeleccionado);
 }
 
 //Funcion que recorre el JSON restando el producto
